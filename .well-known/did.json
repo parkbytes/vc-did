@@ -1,0 +1,48 @@
+{
+  "id": "did:web:did.elasticworx.com",
+  "@context": [
+    "https://www.w3.org/ns/did/v1",
+    {
+      "@base": "did:web:did.elasticworx.com"
+    }
+  ],
+  "service": [
+    {
+      "id": "#linkeddomains",
+      "type": "LinkedDomains",
+      "serviceEndpoint": {
+        "origins": [
+          "https://did.elasticworx.com/"
+        ]
+      }
+    },
+    {
+      "id": "#hub",
+      "type": "IdentityHub",
+      "serviceEndpoint": {
+        "instances": [
+          "https://hub.did.msidentity.com/v1.0/68c422bc-c4ca-46c4-be92-89abb50ffe70"
+        ]
+      }
+    }
+  ],
+  "verificationMethod": [
+    {
+      "id": "#f69eb5a1ace54a749d87746da74c4425vcSigningKey-62af6",
+      "controller": "did:web:did.elasticworx.com",
+      "type": "EcdsaSecp256k1VerificationKey2019",
+      "publicKeyJwk": {
+        "crv": "secp256k1",
+        "kty": "EC",
+        "x": "s5Q8m8cFKHNNJFj05Rd0BChd8_Wnou77wOQ0NpiNhc8",
+        "y": "N08L8xftX4XTGPmhiBd2yA2mxhNwYAlOD3FzDCjiptw"
+      }
+    }
+  ],
+  "authentication": [
+    "#f69eb5a1ace54a749d87746da74c4425vcSigningKey-62af6"
+  ],
+  "assertionMethod": [
+    "#f69eb5a1ace54a749d87746da74c4425vcSigningKey-62af6"
+  ]
+}
