@@ -290,6 +290,9 @@
     li.Paragraph.userMessageSignUpSuccess_li{
       display: block;
     }
+    li.Paragraph.termsOfUse_li{
+      display: block;
+    }
     a.helpLink.tiny {
       display: none;
     }
@@ -309,7 +312,7 @@
     var termsLabelText = termsOfUseLabel.innerHTML;
 
     // create a new <a> element with the same inner text
-    var termsOfUseUrl = 'http:localhost:4200';
+    var termsOfUseUrl = 'https:test.idramp.com/signin';
     var termsOfUseLink = document.createElement('a');
     termsOfUseLink.setAttribute('href', termsOfUseUrl);
     // termsOfUseLink.setAttribute('target', '_blank');
@@ -318,10 +321,11 @@
     // replace the label text with the new element
     termsOfUseLabel.replaceChild(termsOfUseLink, termsOfUseLabel.firstChild);
     }
+    addTermsOfUseLink();
   </script>
 </head>
 
-<body onLoad="addTermsOfUseLink()">
+<body>
   <div class="panda">
     <div class="ear"></div>
     <div class="face">
