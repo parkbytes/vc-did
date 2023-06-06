@@ -287,8 +287,14 @@
     .btn:focus {
       outline: none;
     }
-    .userMessageSignUpSuccess{
+    li.Paragraph.userMessageSignUpSuccess_li{
       display: block;
+    }
+    a.helpLink.tiny {
+      display: none;
+    }
+    .intro {
+      display: none;
     }
   </style>
   <script>
@@ -303,10 +309,10 @@
     var termsLabelText = termsOfUseLabel.innerHTML;
 
     // create a new <a> element with the same inner text
-    var termsOfUseUrl = 'https://learn.microsoft.com/legal/termsofuse';
+    var termsOfUseUrl = 'http:localhost:4200';
     var termsOfUseLink = document.createElement('a');
     termsOfUseLink.setAttribute('href', termsOfUseUrl);
-    termsOfUseLink.setAttribute('target', '_blank');
+    // termsOfUseLink.setAttribute('target', '_blank');
     termsOfUseLink.appendChild(document.createTextNode(termsLabelText));
 
     // replace the label text with the new element
@@ -315,7 +321,7 @@
   </script>
 </head>
 
-<body>
+<body onLoad="addTermsOfUseLink()">
   <div class="panda">
     <div class="ear"></div>
     <div class="face">
@@ -341,7 +347,7 @@
   <div class="form">
     <div class="hand"></div>
     <div class="hand rgt"></div>
-    <h1>Panda Login</h1>
+    <h1>IdRamp Login</h1>
     <div id="api"></div>
   </div>
 </body>
