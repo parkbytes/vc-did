@@ -131,6 +131,9 @@
       var cancelBtn = document.querySelector("#cancel");
       var continueBtn = document.querySelector("#continue");
 
+      var sendCodeBtn = document.querySelector(".sendCode");
+      var infoMessage = document.querySelector('#emailVerificationSSPRControl_info_message');
+
       // Make sure always remove the continue button if it exists.
       if (continueBtn) {
           continueBtn.remove();
@@ -170,6 +173,13 @@
           $id.attr({ "role": "alert", "aria-live": "polite", "aria-hidden": "false", "tabindex": "1" }).css("display", "block");
 
           failedToRedirect = true;
+      }
+
+      //display the info message at start but hide on sendcode click
+      infoMessage.style.display ="inline-block";
+
+      sendCodeBtn.onclick = function(){
+        infoMessage.style.display ="none";
       }
 
       // Adding auto submission once found it is a email verification page.
