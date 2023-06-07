@@ -180,7 +180,7 @@
 
           // Continue the page once email is validated.
           var verifyInterval = setInterval(function() {
-              if ($element.verificationInfo.emailVerificationControl) {
+              if ($element.verificationInfo.emailVerificationSSPRControl) {
                   clearInterval(verifyInterval);
                   $element.verify();
                   cancelBtn.style.display = "none";
