@@ -134,14 +134,22 @@
       var sendCodeBtn = document.querySelector(".sendCode");
       var infoMessage = document.querySelector('#emailVerificationSSPRControl_info_message');
 
+      var givenNameInput = document.querySelector("#givenName");
+      var passwordInput = document.querySelector("#password");
+
       // Make sure always remove the continue button if it exists.
-      if (continueBtn) {
+      if (continueBtn && !givenNameInput && !passwordInput) {
           continueBtn.remove();
       }
 
       // Correcting the order of sendCode and VerifyCode order.
-      sendNewCodeBtn.remove();
-      verifyCodeBtn.parentElement.insertBefore(sendNewCodeBtn, verifyCodeBtn);
+      if (sendCodeBtn) {
+        //display the info message at start but hide on sendcode click
+        infoMessage.style.display ="inline-block";
+        
+        sendNewCodeBtn.remove();
+        verifyCodeBtn.parentElement.insertBefore(sendNewCodeBtn, verifyCodeBtn);
+      }
 
       var readyToRedirect = false;
       $element.confirm = function() {
@@ -174,9 +182,6 @@
 
           failedToRedirect = true;
       }
-
-      //display the info message at start but hide on sendcode click
-      infoMessage.style.display ="inline-block";
 
       sendCodeBtn.onclick = function(){
         infoMessage.style.display ="none";
@@ -232,7 +237,7 @@
 </head>
 <body>
     <div id="background_branding_container" data-tenant-branding-background-color="true">
-      <img data-tenant-branding-background="true" src="https://test.idramp.com/b2cpages/src/backgrounds/4-2.png" alt="Illustration"/>
+      <!-- <img data-tenant-branding-background="true" src="https://test.idramp.com/b2cpages/src/backgrounds/4-2.png" alt="Illustration"/> -->
     </div>
     <div class="container  self_asserted_container " role="presentation">
         <div class="row">
