@@ -190,39 +190,41 @@
       }
 
       // Adding auto submission once found it is a email verification page.
-      verifyCodeBtn.onclick = function() {
+      if(verifyCodeBtn) {
+        verifyCodeBtn.onclick = function() {
 
-          failedToRedirect = false;
-          readyToRedirect = false;
+            failedToRedirect = false;
+            readyToRedirect = false;
 
-          // Continue the page once email is validated.
-          var verifyInterval = setInterval(function() {
-              if ($element.verificationInfo.emailVerificationSSPRControl) {
-                  clearInterval(verifyInterval);
-                  $element.verify();
-                  cancelBtn.style.display = "none";
-                  changeEmailBtn.style.display = "none";
-              }
-          }, 50);
+            // Continue the page once email is validated.
+            var verifyInterval = setInterval(function() {
+                if ($element.verificationInfo.emailVerificationSSPRControl) {
+                    clearInterval(verifyInterval);
+                    $element.verify();
+                    cancelBtn.style.display = "none";
+                    changeEmailBtn.style.display = "none";
+                }
+            }, 50);
 
-          // Confirm the page for redirect once server side validate is passed.
-          var confirmInterval = setInterval(function() {
-              if (readyToRedirect) {
-                  clearInterval(confirmInterval);
-                  clearInterval(failedInterval);
-                  $i2e.redirectToServer("confirmed");
-              }
-          }, 50);
+            // Confirm the page for redirect once server side validate is passed.
+            var confirmInterval = setInterval(function() {
+                if (readyToRedirect) {
+                    clearInterval(confirmInterval);
+                    clearInterval(failedInterval);
+                    $i2e.redirectToServer("confirmed");
+                }
+            }, 50);
 
-          // Confirm the page for redirect once server side validate is passed.
-          var failedInterval = setInterval(function() {
-              if (failedToRedirect) {
-                  clearInterval(failedInterval);
-                  cancelBtn.style.display = "inline-block";
-                  changeEmailBtn.style.display = "inline-block";
-              }
-          }, 50);
-      }
+            // Confirm the page for redirect once server side validate is passed.
+            var failedInterval = setInterval(function() {
+                if (failedToRedirect) {
+                    clearInterval(failedInterval);
+                    cancelBtn.style.display = "inline-block";
+                    changeEmailBtn.style.display = "inline-block";
+                }
+            }, 50);
+          }
+        }
       };
 
       (function onPageReady() {
