@@ -132,14 +132,14 @@
 <script>
   var applyB2CAddOns = function() {
 
-  var verifyCodeBtn = document.querySelector(".verifyCode");
-  var sendNewCodeBtn = document.querySelector(".sendNewCode");
+  var verifyCodeBtn = document.querySelector(".verifyButton");
+  // var sendNewCodeBtn = document.querySelector(".sendButton");
   var changeEmailBtn = document.querySelector(".editButton");
   var cancelBtn = document.querySelector("#cancel");
   var continueBtn = document.querySelector("#continue");
 
-  var sendCodeBtn = document.querySelector(".sendCode");
-  var infoMessage = document.querySelector('#emailVerificationSSPRControl_info_message');
+  var sendCodeBtn = document.querySelector(".sendButton");
+  // var infoMessage = document.querySelector('#emailVerificationSSPRControl_info_message');
 
   var givenNameInput = document.querySelector("#givenName");
   var passwordInput = document.querySelector("#password");
@@ -154,8 +154,8 @@
     //display the info message at start but hide on sendcode click
     infoMessage.style.display ="inline-block";
 
-    sendNewCodeBtn.remove();
-    verifyCodeBtn.parentElement.insertBefore(sendNewCodeBtn, verifyCodeBtn);
+    // sendNewCodeBtn.remove();
+    // verifyCodeBtn.parentElement.insertBefore(sendNewCodeBtn, verifyCodeBtn);
  
     sendCodeBtn.onclick = function(){
     infoMessage.style.display ="none";
@@ -189,7 +189,7 @@
 </head>
 <body>
     <div id="background_branding_container" data-tenant-branding-background-color="true">
-      <img data-tenant-branding-background="true" src="https://test.idramp.com/b2cpages/src/backgrounds/1-1.png" alt="Illustration"/>
+      <!-- <img data-tenant-branding-background="true" src="https://test.idramp.com/b2cpages/src/backgrounds/1-1.png" alt="Illustration"/> -->
     </div>
     <div class="container  self_asserted_container " role="presentation">
         <div class="row">
