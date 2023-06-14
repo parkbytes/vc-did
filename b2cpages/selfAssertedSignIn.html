@@ -3,7 +3,7 @@
 <html>
 <head>
     
-    <title>User details</title>
+    <title>Enter User details</title>
 
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -149,19 +149,10 @@
   if (continueBtn && !givenNameInput && !passwordInput && !newPasswordInput) {
       continueBtn.style.display = 'none';
   }
+  if (continueBtn) {
+    changeEmailBtn.style.display = "none";
+  }
 
-  // Adding auto submission once found it is a email verification page.
-  if(verifyCodeBtn) {
-    verifyCodeBtn.onclick = function() {
-
-                // $element.verify();
-                cancelBtn.style.display = "none";
-                changeEmailBtn.style.display = "none";
-                continueBtn.style.display = "inline-block";
-  
-      }
-    }
-  };
 
   (function onPageReady() {
   var intervalHandle = setInterval(
