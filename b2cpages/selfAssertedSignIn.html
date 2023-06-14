@@ -145,7 +145,11 @@
   var passwordInput = document.querySelector("#password");
   var newPasswordInput = document.querySelector("#newPassword");
 
-  // Make sure always remove the continue button if it exists.
+  // Make sure always remove the change email button if it exists.
+  if(changeEmailBtn) {
+    changeEmailBtn.remove();
+  }
+  // Hide continue button if it exists based on conditions.
   if (continueBtn && !givenNameInput && !passwordInput && !newPasswordInput) {
       continueBtn.style.display = 'none';
   }
@@ -156,7 +160,7 @@
 
                 // $element.verify();
                 // cancelBtn.style.display = "none";
-                changeEmailBtn.style.display = "none";
+                // changeEmailBtn.style.display = "none";
                 continueBtn.style.display = "inline-block";
   
       }
