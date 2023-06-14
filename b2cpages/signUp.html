@@ -132,7 +132,54 @@
     margin-bottom: 30px;
 }
 </style>
+<script>
+  var applyB2CAddOns = function() {
 
+  var verifyCodeBtn = document.querySelector(".verifyButton");
+  // var sendNewCodeBtn = document.querySelector(".sendButton");
+  var changeEmailBtn = document.querySelector(".editButton");
+  var cancelBtn = document.querySelector("#cancel");
+  var continueBtn = document.querySelector("#continue");
+
+  var sendCodeBtn = document.querySelector(".sendButton");
+  // var infoMessage = document.querySelector('#emailVerificationSSPRControl_info_message');
+
+  var givenNameInput = document.querySelector("#givenName");
+  var passwordInput = document.querySelector("#password");
+  var newPasswordInput = document.querySelector("#newPassword");
+
+  // Make sure always remove the change email button if it exists.
+  if(changeEmailBtn) {
+    changeEmailBtn.remove();
+  }
+  // Hide continue button if it exists based on conditions.
+  // if (continueBtn && !givenNameInput && !passwordInput && !newPasswordInput) {
+  //     continueBtn.style.display = 'none';
+  // }
+
+  // Adding auto submission once found it is a email verification page.
+  // if(verifyCodeBtn) {
+  //   verifyCodeBtn.onclick = function() {
+
+  //               // $element.verify();
+  //               // cancelBtn.style.display = "none";
+  //               // changeEmailBtn.style.display = "none";
+  //               continueBtn.style.display = "inline-block";
+  
+  //     }
+  //   }
+  };
+
+  (function onPageReady() {
+  var intervalHandle = setInterval(
+      function () {
+          if (window.pageReady) {
+              applyB2CAddOns();
+              clearInterval(intervalHandle);
+          }
+      }, 50);
+  }());
+</script>
 </head>
 <body>
     <div id="background_branding_container" data-tenant-branding-background-color="true">
