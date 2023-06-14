@@ -143,9 +143,10 @@
 
   var givenNameInput = document.querySelector("#givenName");
   var passwordInput = document.querySelector("#password");
+  var newPasswordInput = document.querySelector("#newPassword");
 
   // Make sure always remove the continue button if it exists.
-  if (continueBtn && !givenNameInput && !passwordInput) {
+  if (continueBtn && !givenNameInput && !passwordInput && !newPasswordInput) {
       continueBtn.style.display = 'none';
   }
 
