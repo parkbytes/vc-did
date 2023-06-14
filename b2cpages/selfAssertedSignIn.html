@@ -149,19 +149,6 @@
       continueBtn.style.display = 'none';
   }
 
-  // Correcting the order of sendCode and VerifyCode order.
-  if (sendCodeBtn) {
-    //display the info message at start but hide on sendcode click
-    infoMessage.style.display ="inline-block";
-
-    // sendNewCodeBtn.remove();
-    // verifyCodeBtn.parentElement.insertBefore(sendNewCodeBtn, verifyCodeBtn);
- 
-    sendCodeBtn.onclick = function(){
-    infoMessage.style.display ="none";
-    }
-  }
-
   // Adding auto submission once found it is a email verification page.
   if(verifyCodeBtn) {
     verifyCodeBtn.onclick = function() {
