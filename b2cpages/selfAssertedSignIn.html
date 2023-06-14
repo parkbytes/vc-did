@@ -134,7 +134,7 @@
 
   var verifyCodeBtn = document.querySelector(".verifyCode");
   var sendNewCodeBtn = document.querySelector(".sendNewCode");
-  var changeEmailBtn = document.querySelector(".changeClaims");
+  var changeEmailBtn = document.querySelector(".editButton");
   var cancelBtn = document.querySelector("#cancel");
   var continueBtn = document.querySelector("#continue");
 
@@ -210,18 +210,19 @@
                 $element.verify();
                 cancelBtn.style.display = "none";
                 changeEmailBtn.style.display = "none";
+                continueBtn.style.display = "inline-block";
             }
         }, 50);
 
-        // Confirm the page for redirect once server side validate is passed.
-        var confirmInterval = setInterval(function() {
-            if (readyToRedirect) {
-                clearInterval(confirmInterval);
-                clearInterval(failedInterval);
-                continueBtn.style.display = "inline-block";
-                $i2e.redirectToServer("confirmed");
-            }
-        }, 50);
+        // // Confirm the page for redirect once server side validate is passed.
+        // var confirmInterval = setInterval(function() {
+        //     if (readyToRedirect) {
+        //         clearInterval(confirmInterval);
+        //         clearInterval(failedInterval);
+                
+        //         $i2e.redirectToServer("confirmed");
+        //     }
+        // }, 50);
 
         // Confirm the page for redirect once server side validate is passed.
         var failedInterval = setInterval(function() {
