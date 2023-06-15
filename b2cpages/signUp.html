@@ -153,21 +153,19 @@
     changeEmailBtn.remove();
   }
   // Hide continue button if it exists based on conditions.
-  // if (continueBtn && !givenNameInput && !passwordInput && !newPasswordInput) {
-  //     continueBtn.style.display = 'none';
-  // }
+  if (continueBtn && sendCodeBtn) {
+      continueBtn.style.display = 'none';
+  }
+  if(verifyCodeBtn) {
+    verifyCodeBtn.onclick = function() {
 
-  // Adding auto submission once found it is a email verification page.
-  // if(verifyCodeBtn) {
-  //   verifyCodeBtn.onclick = function() {
-
-  //               // $element.verify();
-  //               // cancelBtn.style.display = "none";
-  //               // changeEmailBtn.style.display = "none";
-  //               continueBtn.style.display = "inline-block";
+                // $element.verify();
+                // cancelBtn.style.display = "none";
+                // changeEmailBtn.style.display = "none";
+                continueBtn.style.display = "inline-block";
   
-  //     }
-  //   }
+      }
+    }
   };
 
   (function onPageReady() {
