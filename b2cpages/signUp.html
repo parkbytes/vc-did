@@ -125,24 +125,37 @@
 
 var applyB2CAddOns = function() {
 
-function makePwdToggler(pwd){
-  // Create show-password checkbox
-  var span = document.createElement('span');
-  span.setAttribute('class', 'show-pass glyphicon glyphicon-eye-open');
-  var id = pwd.id + 'toggler';
-  span.setAttribute('id', id);
+  function makePwdToggler(pwd){
+    // Create show-password checkbox
+    var span = document.createElement('span');
+    span.setAttribute('class', 'show-pass glyphicon glyphicon-eye-open');
+    var id = pwd.id + 'toggler';
+    span.setAttribute('id', id);
 
-  // Add show-password icon under password input
-  pwd.insertAdjacentElement('afterend', span);
-}
+    // Add show-password icon under password input
+    pwd.insertAdjacentElement('afterend', span);
 
-function setupPwdTogglers(){
-  var pwdInputs = document.querySelectorAll('input[type=password]');
-  for (var i = 0; i < pwdInputs.length; i++) {
-    makePwdToggler(pwdInputs[i]);
+    // Add toggle password callback
+    function toggle(){
+      if(pwd.type === 'password'){
+        pwd.type = 'text';
+      } else {
+        pwd.type = 'password';
+      }
+      span.classList.toggle("glyphicon-eye-close");
+    }
+    
+    span.onclick = toggle;
   }
-}
-setupPwdTogglers();
+
+  function setupPwdTogglers(){
+    var pwdInputs = document.querySelectorAll('input[type=password]');
+    for (var i = 0; i < pwdInputs.length; i++) {
+      makePwdToggler(pwdInputs[i]);
+    }
+  }
+
+  setupPwdTogglers();
 };
 
 (function onPageReady() {
@@ -157,9 +170,8 @@ setupPwdTogglers();
 </script>
 <style>
 .show-pass {
-  position: absolute;
   top: 5%;
-  right: 8%;
+  right: 5%;
 }
 
 .progress-bar-danger {
