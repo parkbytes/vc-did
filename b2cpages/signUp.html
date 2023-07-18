@@ -125,31 +125,35 @@
 
 var applyB2CAddOns = function() {
 
+  $(function () {
+    $('.tt').popover({trigger: "hover"});
+  })
+
   function makePwdPopOver(){
     var lowUpperCaseSpan = document.createElement('span');
-    lowUpperCaseSpan.setAttribute('class', 'low-upper-case glyphicon glyphicon-asterisk');
+    lowUpperCaseSpan.setAttribute('class', 'low-upper-case glyphicon glyphicon-stop');
     var lowerUpperLi = document.createElement('li');
     lowerUpperLi.setAttribute('class',"");
     lowerUpperLi.appendChild(lowUpperCaseSpan);
-    lowerUpperLi.appendChild(document.createTextNode(' Lowercase & Uppercase'));;
+    lowerUpperLi.appendChild(document.createTextNode('  Lowercase & Uppercase'));;
 
     var numberSpan = document.createElement('span');
-    numberSpan.setAttribute('class', 'one-number glyphicon glyphicon-asterisk');
-    numberSpan.appendChild(document.createTextNode(' Number (0-9)'));
+    numberSpan.setAttribute('class', 'one-number glyphicon glyphicon-stop');
+    numberSpan.appendChild(document.createTextNode('  Number (0-9)'));
     var numberLi = document.createElement('li');
     numberLi.setAttribute('class',"");
     numberLi.appendChild(numberSpan);
 
     var specialCharSpan = document.createElement('span');
-    specialCharSpan.setAttribute('class', 'one-special-char glyphicon glyphicon-asterisk');
-    specialCharSpan.appendChild(document.createTextNode(' Special Character (!@#$%^&*)'));
+    specialCharSpan.setAttribute('class', 'one-special-char glyphicon glyphicon-stop');
+    specialCharSpan.appendChild(document.createTextNode('  Special Character (!@#$%^&*)'));
     var specialCharLi = document.createElement('li');
     specialCharLi.setAttribute('class',"");
     specialCharLi.appendChild(specialCharSpan);
 
     var eightCharSpan = document.createElement('span');
-    eightCharSpan.setAttribute('class', 'eight-character glyphicon glyphicon-asterisk');
-    eightCharSpan.appendChild(document.createTextNode(' Atleast 8 Character'));
+    eightCharSpan.setAttribute('class', 'eight-character glyphicon glyphicon-stop');
+    eightCharSpan.appendChild(document.createTextNode('  Atleast 8 Character'));
     var eightCharLi = document.createElement('li');
     eightCharLi.setAttribute('class',"");
     eightCharLi.appendChild(eightCharSpan);
@@ -173,9 +177,10 @@ var applyB2CAddOns = function() {
   function makePwdToggler(pwd){
     // Create show-password checkbox
     var span = document.createElement('span');
-    span.setAttribute('class', 'show-pass glyphicon glyphicon-eye-open');
+    span.setAttribute('class', 'tt show-pass glyphicon glyphicon-eye-open');
     var id = pwd.id + 'toggler';
     span.setAttribute('id', id);
+    span.setAttribute('data-content', 'show password');
 
     pwd.addEventListener("keyup", function(){
       let pass = pwd.value;
@@ -203,37 +208,37 @@ var applyB2CAddOns = function() {
     //If password contains both lower and uppercase characters
     if (password.match(/([a-z].*[A-Z])|([A-Z].*[a-z])/)) {
         strength += 1;
-        lowUpperCase.classList.remove('glyphicon-asterisk');
+        lowUpperCase.classList.remove('glyphicon-stop');
         lowUpperCase.classList.add('glyphicon-ok');
     } else {
-        lowUpperCase.classList.add('glyphicon-asterisk');
+        lowUpperCase.classList.add('glyphicon-stop');
         lowUpperCase.classList.remove('glyphicon-ok');
     }
     //If it has numbers and characters
     if (password.match(/([0-9])/)) {
         strength += 1;
-        number.classList.remove('glyphicon-asterisk');
+        number.classList.remove('glyphicon-stop');
         number.classList.add('glyphicon-ok');
     } else {
-        number.classList.add('glyphicon-asterisk');
+        number.classList.add('glyphicon-stop');
         number.classList.remove('glyphicon-ok');
     }
     //If it has one special character
     if (password.match(/([!,%,&,@,#,$,^,*,?,_,~])/)) {
         strength += 1;
-        specialChar.classList.remove('glyphicon-asterisk');
+        specialChar.classList.remove('glyphicon-stop');
         specialChar.classList.add('glyphicon-ok');
     } else {
-        specialChar.classList.add('glyphicon-asterisk');
+        specialChar.classList.add('glyphicon-stop');
         specialChar.classList.remove('glyphicon-ok');
     }
     //If password is greater than 7
     if (password.length > 7) {
         strength += 1;
-        eightChar.classList.remove('glyphicon-asterisk');
+        eightChar.classList.remove('glyphicon-stop');
         eightChar.classList.add('glyphicon-ok');
     } else {
-        eightChar.classList.add('glyphicon-asterisk');
+        eightChar.classList.add('glyphicon-stop');
         eightChar.classList.remove('glyphicon-ok');   
     }
   }
@@ -267,6 +272,8 @@ var applyB2CAddOns = function() {
     padding-left: 10px !important;
     list-style: none;
     align-items: start;
+    line-height: 0;
+    font-size: 12px;
 }
 .textInput {
   width: 90% !important;
@@ -293,7 +300,7 @@ var applyB2CAddOns = function() {
   cursor: pointer;
 }
 
-.glyphicon-asterisk{
+.glyphicon-stop{
   font-size: 6px;
 }
 
