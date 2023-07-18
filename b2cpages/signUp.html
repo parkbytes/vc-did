@@ -254,7 +254,7 @@ var applyB2CAddOns = function() {
   var eightChar = document.querySelector(".eight-character");
   
   setupPwdTogglers();
-
+  $.noConflict();
   $(function () {
     $('.tt')[0].popover({trigger: "hover"});
   });
