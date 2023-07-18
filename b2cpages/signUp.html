@@ -128,13 +128,39 @@ var applyB2CAddOns = function() {
   function makePwdPopOver(){
     var lowUpperCaseSpan = document.createElement('span');
     lowUpperCaseSpan.setAttribute('class', 'low-upper-case glyphicon glyphicon-asterisk');
-    lowUpperCaseSpan.appendChild(document.createTextNode(' Lowercase &amp; Uppercase'));
-    var li = document.createElement('li');
-    li.setAttribute('class',"");
-    li.appendChild(lowUpperCaseSpan);
+    lowUpperCaseSpan.appendChild(document.createTextNode('&nbsp;Lowercase &amp; Uppercase'));
+    var lowerUpperLi = document.createElement('li');
+    lowerUpperLi.setAttribute('class',"");
+    lowerUpperLi.appendChild(lowUpperCaseSpan);
+
+    var numberSpan = document.createElement('span');
+    numberSpan.setAttribute('class', 'one-number glyphicon glyphicon-asterisk');
+    numberSpan.appendChild(document.createTextNode('&nbsp;Number (0-9)'));
+    var numberLi = document.createElement('li');
+    numberLi.setAttribute('class',"");
+    numberLi.appendChild(numberSpan);
+
+    var specialCharSpan = document.createElement('span');
+    specialCharSpan.setAttribute('class', 'one-special-char glyphicon glyphicon-asterisk');
+    specialCharSpan.appendChild(document.createTextNode('&nbsp;Special Character (!@#$%^&*)'));
+    var specialCharLi = document.createElement('li');
+    specialCharLi.setAttribute('class',"");
+    specialCharLi.appendChild(specialCharSpan);
+
+    var eightCharSpan = document.createElement('span');
+    eightCharSpan.setAttribute('class', 'eight-character glyphicon glyphicon-asterisk');
+    eightCharSpan.appendChild(document.createTextNode('&nbsp;Atleast 8 Character'));
+    var eightCharLi = document.createElement('li');
+    eightCharLi.setAttribute('class',"");
+    eightCharLi.appendChild(eightCharSpan);
+
     var ul = document.createElement('ul');
     ul.setAttribute('class', 'list-unstyled');
-    ul.appendChild(li);
+    ul.appendChild(lowerUpperLi);
+    ul.appendChild(numberLi);
+    ul.appendChild(specialCharLi);
+    ul.appendChild(eightCharLi);
+  
     var div = document.createElement('div');
     div.appendChild(ul);
 
@@ -142,9 +168,6 @@ var applyB2CAddOns = function() {
     pwd.insertAdjacentElement('afterend', div);
   }
   
-  // var number = document.querySelector(".one-number");
-  // var specialChar = document.querySelector(".one-special-char");
-  // var eightChar = document.querySelector(".eight-character");
 
   function makePwdToggler(pwd){
     // Create show-password checkbox
@@ -186,32 +209,32 @@ var applyB2CAddOns = function() {
         lowUpperCase.classList.remove('glyphicon-ok');
     }
     //If it has numbers and characters
-    // if (password.match(/([0-9])/)) {
-    //     strength += 1;
-    //     number.classList.remove('glyphicon-asterisk');
-    //     number.classList.add('glyphicon-ok');
-    // } else {
-    //     number.classList.add('glyphicon-asterisk');
-    //     number.classList.remove('glyphicon-ok');
-    // }
+    if (password.match(/([0-9])/)) {
+        strength += 1;
+        number.classList.remove('glyphicon-asterisk');
+        number.classList.add('glyphicon-ok');
+    } else {
+        number.classList.add('glyphicon-asterisk');
+        number.classList.remove('glyphicon-ok');
+    }
     //If it has one special character
-    // if (password.match(/([!,%,&,@,#,$,^,*,?,_,~])/)) {
-    //     strength += 1;
-    //     specialChar.classList.remove('glyphicon-asterisk');
-    //     specialChar.classList.add('glyphicon-ok');
-    // } else {
-    //     specialChar.classList.add('glyphicon-asterisk');
-    //     specialChar.classList.remove('glyphicon-ok');
-    // }
+    if (password.match(/([!,%,&,@,#,$,^,*,?,_,~])/)) {
+        strength += 1;
+        specialChar.classList.remove('glyphicon-asterisk');
+        specialChar.classList.add('glyphicon-ok');
+    } else {
+        specialChar.classList.add('glyphicon-asterisk');
+        specialChar.classList.remove('glyphicon-ok');
+    }
     //If password is greater than 7
-    // if (password.length > 7) {
-    //     strength += 1;
-    //     eightChar.classList.remove('glyphicon-asterisk');
-    //     eightChar.classList.add('glyphicon-ok');
-    // } else {
-    //     eightChar.classList.add('glyphicon-asterisk');
-    //     eightChar.classList.remove('glyphicon-ok');   
-    // }
+    if (password.length > 7) {
+        strength += 1;
+        eightChar.classList.remove('glyphicon-asterisk');
+        eightChar.classList.add('glyphicon-ok');
+    } else {
+        eightChar.classList.add('glyphicon-asterisk');
+        eightChar.classList.remove('glyphicon-ok');   
+    }
   }
 
   function setupPwdTogglers(){
@@ -222,6 +245,9 @@ var applyB2CAddOns = function() {
   }
   makePwdPopOver();
   var lowUpperCase = document.querySelector(".low-upper-case");
+  var number = document.querySelector(".one-number");
+  var specialChar = document.querySelector(".one-special-char");
+  var eightChar = document.querySelector(".eight-character");
   setupPwdTogglers();
 };
 
