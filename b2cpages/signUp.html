@@ -166,6 +166,9 @@ var applyB2CAddOns = function() {
   
     var div = document.createElement('div');
     div.setAttribute('class', 'popover-password');
+    var msgSpan = document.createElement('span');
+    msgSpan.appendChild(document.createTextNode('New Password must contain:'))
+    div.appendChild(msgSpan)
     div.appendChild(ul);
 
     var pwd = document.getElementById("newPassword");
@@ -272,6 +275,10 @@ var applyB2CAddOns = function() {
       }());
 </script>
 <style>
+.popover-password {
+  border:1px solid #F0F1F3;
+  border-radius: 3px;
+}
 .list-pwd-strength {
     padding-left: 10px !important;
     list-style: none;
