@@ -125,10 +125,6 @@
 
 var applyB2CAddOns = function() {
 
-  $(function () {
-    $('.tt').popover({trigger: "hover"});
-  })
-
   function makePwdPopOver(){
     var lowUpperCaseSpan = document.createElement('span');
     lowUpperCaseSpan.setAttribute('class', 'low-upper-case glyphicon glyphicon-stop');
@@ -254,7 +250,12 @@ var applyB2CAddOns = function() {
   var number = document.querySelector(".one-number");
   var specialChar = document.querySelector(".one-special-char");
   var eightChar = document.querySelector(".eight-character");
+  
   setupPwdTogglers();
+
+  $(function () {
+    $('.tt').popover({trigger: "hover"});
+  })
 };
 
 (function onPageReady() {
