@@ -177,6 +177,7 @@ var applyB2CAddOns = function() {
     var id = pwd.id + 'toggler';
     span.setAttribute('id', id);
     span.setAttribute('data-content', 'show password');
+    span.setAttribute('title', 'show-hide password');
 
     pwd.addEventListener("keyup", function(){
       let pass = pwd.value;
@@ -253,9 +254,9 @@ var applyB2CAddOns = function() {
   
   setupPwdTogglers();
 
-  $(function () {
-    $('.tt').popover({trigger: "hover"});
-  });
+  // $(function () {
+  //   $('.tt')[0].popover({trigger: "hover"});
+  // });
 };
 
 (function onPageReady() {
