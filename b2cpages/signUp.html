@@ -125,12 +125,37 @@
 
 var applyB2CAddOns = function() {
 
+  function makePwdPopOver(){
+    var lowUpperCaseSpan = document.createElement('span');
+    lowUpperCaseSpan.setAttribute('class', 'low-upper-case glyphicon glyphicon-asterisk');
+    lowUpperCase.appendChild(document.createTextNode(' Lowercase & Uppercase'));
+    var li = document.createElement('li');
+    li.setAttribute('class',"");
+    var ul = document.createElement('ul');
+    ul.setAttribute('class', 'list-unstyled');
+    ul.appendChild(li);
+    var div = document.createElement('div');
+    div.appendChild(ul);
+
+    var pwd = document.getElementById("newPassword");
+    pwd.insertAdjacentElement('afterend', div);
+  }
+  
+  // var number = document.querySelector(".one-number");
+  // var specialChar = document.querySelector(".one-special-char");
+  // var eightChar = document.querySelector(".eight-character");
+
   function makePwdToggler(pwd){
     // Create show-password checkbox
     var span = document.createElement('span');
     span.setAttribute('class', 'show-pass glyphicon glyphicon-eye-open');
     var id = pwd.id + 'toggler';
     span.setAttribute('id', id);
+
+    pwd.addEventListener("keyup", function(){
+      let pass = pwd.value;
+      checkStrength(pass);
+    });
 
     // Add show-password icon under password input
     pwd.insertAdjacentElement('afterend', span);
@@ -148,13 +173,54 @@ var applyB2CAddOns = function() {
     span.onclick = toggle;
   }
 
+  function checkStrength(password) {
+    var strength = 0;
+    //If password contains both lower and uppercase characters
+    if (password.match(/([a-z].*[A-Z])|([A-Z].*[a-z])/)) {
+        strength += 1;
+        lowUpperCase.classList.remove('glyphicon-asterisk');
+        lowUpperCase.classList.add('glyphicon-ok');
+    } else {
+        lowUpperCase.classList.add('glyphicon-asterisk');
+        lowUpperCase.classList.remove('glyphicon-ok');
+    }
+    //If it has numbers and characters
+    // if (password.match(/([0-9])/)) {
+    //     strength += 1;
+    //     number.classList.remove('glyphicon-asterisk');
+    //     number.classList.add('glyphicon-ok');
+    // } else {
+    //     number.classList.add('glyphicon-asterisk');
+    //     number.classList.remove('glyphicon-ok');
+    // }
+    //If it has one special character
+    // if (password.match(/([!,%,&,@,#,$,^,*,?,_,~])/)) {
+    //     strength += 1;
+    //     specialChar.classList.remove('glyphicon-asterisk');
+    //     specialChar.classList.add('glyphicon-ok');
+    // } else {
+    //     specialChar.classList.add('glyphicon-asterisk');
+    //     specialChar.classList.remove('glyphicon-ok');
+    // }
+    //If password is greater than 7
+    // if (password.length > 7) {
+    //     strength += 1;
+    //     eightChar.classList.remove('glyphicon-asterisk');
+    //     eightChar.classList.add('glyphicon-ok');
+    // } else {
+    //     eightChar.classList.add('glyphicon-asterisk');
+    //     eightChar.classList.remove('glyphicon-ok');   
+    // }
+  }
+
   function setupPwdTogglers(){
     var pwdInputs = document.querySelectorAll('input[type=password]');
     for (var i = 0; i < pwdInputs.length; i++) {
       makePwdToggler(pwdInputs[i]);
     }
   }
-
+  makePwdPopOver();
+  var lowUpperCase = document.querySelector(".low-upper-case");
   setupPwdTogglers();
 };
 
@@ -170,7 +236,7 @@ var applyB2CAddOns = function() {
 </script>
 <style>
 .textInput {
-  width: 90%;
+  width: 90% !important;
 }
 .show-pass {
   top: 5%;
