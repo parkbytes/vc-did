@@ -128,28 +128,28 @@ var applyB2CAddOns = function() {
   function makePwdPopOver(){
     var lowUpperCaseSpan = document.createElement('span');
     lowUpperCaseSpan.setAttribute('class', 'low-upper-case glyphicon glyphicon-asterisk');
-    lowUpperCaseSpan.appendChild(document.createTextNode('&nbsp;Lowercase &amp; Uppercase'));
+    lowUpperCaseSpan.appendChild(document.createTextNode(' Lowercase & Uppercase'));
     var lowerUpperLi = document.createElement('li');
     lowerUpperLi.setAttribute('class',"");
     lowerUpperLi.appendChild(lowUpperCaseSpan);
 
     var numberSpan = document.createElement('span');
     numberSpan.setAttribute('class', 'one-number glyphicon glyphicon-asterisk');
-    numberSpan.appendChild(document.createTextNode('&nbsp;Number (0-9)'));
+    numberSpan.appendChild(document.createTextNode(' Number (0-9)'));
     var numberLi = document.createElement('li');
     numberLi.setAttribute('class',"");
     numberLi.appendChild(numberSpan);
 
     var specialCharSpan = document.createElement('span');
     specialCharSpan.setAttribute('class', 'one-special-char glyphicon glyphicon-asterisk');
-    specialCharSpan.appendChild(document.createTextNode('&nbsp;Special Character (!@#$%^&*)'));
+    specialCharSpan.appendChild(document.createTextNode(' Special Character (!@#$%^&*)'));
     var specialCharLi = document.createElement('li');
     specialCharLi.setAttribute('class',"");
     specialCharLi.appendChild(specialCharSpan);
 
     var eightCharSpan = document.createElement('span');
     eightCharSpan.setAttribute('class', 'eight-character glyphicon glyphicon-asterisk');
-    eightCharSpan.appendChild(document.createTextNode('&nbsp;Atleast 8 Character'));
+    eightCharSpan.appendChild(document.createTextNode(' Atleast 8 Character'));
     var eightCharLi = document.createElement('li');
     eightCharLi.setAttribute('class',"");
     eightCharLi.appendChild(eightCharSpan);
@@ -162,6 +162,7 @@ var applyB2CAddOns = function() {
     ul.appendChild(eightCharLi);
   
     var div = document.createElement('div');
+    div.setAttribute('class', 'popover-password');
     div.appendChild(ul);
 
     var pwd = document.getElementById("newPassword");
@@ -262,6 +263,10 @@ var applyB2CAddOns = function() {
       }());
 </script>
 <style>
+.list-unstyled {
+    padding-left: 0;
+    list-style: none;
+}
 .textInput {
   width: 90% !important;
 }
