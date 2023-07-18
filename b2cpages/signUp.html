@@ -128,10 +128,10 @@ var applyB2CAddOns = function() {
   function makePwdPopOver(){
     var lowUpperCaseSpan = document.createElement('span');
     lowUpperCaseSpan.setAttribute('class', 'low-upper-case glyphicon glyphicon-asterisk');
-    lowUpperCaseSpan.appendChild(document.createTextNode(' Lowercase & Uppercase'));
     var lowerUpperLi = document.createElement('li');
     lowerUpperLi.setAttribute('class',"");
     lowerUpperLi.appendChild(lowUpperCaseSpan);
+    lowerUpperLi.appendChild(document.createTextNode(' Lowercase & Uppercase'));;
 
     var numberSpan = document.createElement('span');
     numberSpan.setAttribute('class', 'one-number glyphicon glyphicon-asterisk');
@@ -264,8 +264,9 @@ var applyB2CAddOns = function() {
 </script>
 <style>
 .list-unstyled {
-    padding-left: 0;
+    padding-left: 10px !important;
     list-style: none;
+    align-items: start;
 }
 .textInput {
   width: 90% !important;
