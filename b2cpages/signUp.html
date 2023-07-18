@@ -130,28 +130,28 @@ var applyB2CAddOns = function() {
 
   function makePwdPopOver(){
     var lowUpperCaseSpan = document.createElement('span');
-    lowUpperCaseSpan.setAttribute('class', 'low-upper-case glyphicon glyphicon-stop');
+    lowUpperCaseSpan.setAttribute('class', 'low-upper-case glyphicon glyphicon-unchecked');
     var lowerUpperLi = document.createElement('li');
     lowerUpperLi.setAttribute('class',"");
     lowerUpperLi.appendChild(lowUpperCaseSpan);
     lowerUpperLi.appendChild(document.createTextNode('  Lowercase & Uppercase'));;
 
     var numberSpan = document.createElement('span');
-    numberSpan.setAttribute('class', 'one-number glyphicon glyphicon-stop');
+    numberSpan.setAttribute('class', 'one-number glyphicon glyphicon-unchecked');
     var numberLi = document.createElement('li');
     numberLi.setAttribute('class',"");
     numberLi.appendChild(numberSpan);
     numberLi.appendChild(document.createTextNode('  Number (0-9)'));
 
     var specialCharSpan = document.createElement('span');
-    specialCharSpan.setAttribute('class', 'one-special-char glyphicon glyphicon-stop');
+    specialCharSpan.setAttribute('class', 'one-special-char glyphicon glyphicon-unchecked');
     var specialCharLi = document.createElement('li');
     specialCharLi.setAttribute('class',"");
     specialCharLi.appendChild(specialCharSpan);
     specialCharLi.appendChild(document.createTextNode('  Special Character (!@#$%^&*)'));
 
     var eightCharSpan = document.createElement('span');
-    eightCharSpan.setAttribute('class', 'eight-character glyphicon glyphicon-stop');
+    eightCharSpan.setAttribute('class', 'eight-character glyphicon glyphicon-unchecked');
     var eightCharLi = document.createElement('li');
     eightCharLi.setAttribute('class',"");
     eightCharLi.appendChild(eightCharSpan);
@@ -207,38 +207,38 @@ var applyB2CAddOns = function() {
     //If password contains both lower and uppercase characters
     if (password.match(/([a-z].*[A-Z])|([A-Z].*[a-z])/)) {
         strength += 1;
-        lowUpperCase.classList.remove('glyphicon-stop');
-        lowUpperCase.classList.add('glyphicon-ok');
+        lowUpperCase.classList.remove('glyphicon-unchecked');
+        lowUpperCase.classList.add('glyphicon-check');
     } else {
-        lowUpperCase.classList.add('glyphicon-stop');
-        lowUpperCase.classList.remove('glyphicon-ok');
+        lowUpperCase.classList.add('glyphicon-unchecked');
+        lowUpperCase.classList.remove('glyphicon-check');
     }
     //If it has numbers and characters
     if (password.match(/([0-9])/)) {
         strength += 1;
-        number.classList.remove('glyphicon-stop');
-        number.classList.add('glyphicon-ok');
+        number.classList.remove('glyphicon-unchecked');
+        number.classList.add('glyphicon-check');
     } else {
-        number.classList.add('glyphicon-stop');
-        number.classList.remove('glyphicon-ok');
+        number.classList.add('glyphicon-unchecked');
+        number.classList.remove('glyphicon-check');
     }
     //If it has one special character
     if (password.match(/([!,%,&,@,#,$,^,*,?,_,~])/)) {
         strength += 1;
-        specialChar.classList.remove('glyphicon-stop');
-        specialChar.classList.add('glyphicon-ok');
+        specialChar.classList.remove('glyphicon-unchecked');
+        specialChar.classList.add('glyphicon-check');
     } else {
-        specialChar.classList.add('glyphicon-stop');
-        specialChar.classList.remove('glyphicon-ok');
+        specialChar.classList.add('glyphicon-unchecked');
+        specialChar.classList.remove('glyphicon-check');
     }
     //If password is greater than 7
     if (password.length > 7) {
         strength += 1;
-        eightChar.classList.remove('glyphicon-stop');
-        eightChar.classList.add('glyphicon-ok');
+        eightChar.classList.remove('glyphicon-unchecked');
+        eightChar.classList.add('glyphicon-check');
     } else {
-        eightChar.classList.add('glyphicon-stop');
-        eightChar.classList.remove('glyphicon-ok');   
+        eightChar.classList.add('glyphicon-unchecked');
+        eightChar.classList.remove('glyphicon-check');   
     }
   }
 
@@ -276,7 +276,7 @@ var applyB2CAddOns = function() {
     padding-left: 10px !important;
     list-style: none;
     align-items: start;
-    line-height: 0;
+    line-height: 1;
     font-size: 12px;
 }
 .textInput {
@@ -304,11 +304,11 @@ var applyB2CAddOns = function() {
   cursor: pointer;
 }
 
-.glyphicon-stop{
-  font-size: 6px;
+.glyphicon-unchecked, .glyphicon-check{
+  font-size: 10px;
 }
 
-.glyphicon-ok {
+.glyphicon-check {
   color: #02b502;
 }
 </style>
