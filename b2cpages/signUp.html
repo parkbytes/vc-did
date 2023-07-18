@@ -165,10 +165,12 @@ var applyB2CAddOns = function() {
 
     var ul = document.createElement('ul');
     ul.setAttribute('class', 'list-pwd-strength');
+    ul.appendChild(msgLi);
     ul.appendChild(lowerUpperLi);
     ul.appendChild(numberLi);
     ul.appendChild(specialCharLi);
     ul.appendChild(eightCharLi);
+   
   
     var div = document.createElement('div');
     div.setAttribute('class', 'popover-password');
