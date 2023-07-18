@@ -10,8 +10,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script> -->
-    <script crossorigin="anonymous" src="https://unpkg.com/@popperjs/core@2"></script>
-    <script crossorigin="anonymous" src="https://ajax.aspnetcdn.com/ajax/bootstrap/4.3.1/bootstrap.min.js"></script>
+    <!-- <script crossorigin="anonymous" src="https://unpkg.com/@popperjs/core@2"></script> -->
+    <!-- <script crossorigin="anonymous" src="https://ajax.aspnetcdn.com/ajax/bootstrap/4.3.1/bootstrap.min.js"></script> -->
     <style id="common">
         @font-face {
             font-family: 'SegoeUI';
@@ -138,27 +138,27 @@ var applyB2CAddOns = function() {
 
     var numberSpan = document.createElement('span');
     numberSpan.setAttribute('class', 'one-number glyphicon glyphicon-stop');
-    numberSpan.appendChild(document.createTextNode('  Number (0-9)'));
     var numberLi = document.createElement('li');
     numberLi.setAttribute('class',"");
     numberLi.appendChild(numberSpan);
+    numberLi.appendChild(document.createTextNode('  Number (0-9)'));
 
     var specialCharSpan = document.createElement('span');
     specialCharSpan.setAttribute('class', 'one-special-char glyphicon glyphicon-stop');
-    specialCharSpan.appendChild(document.createTextNode('  Special Character (!@#$%^&*)'));
     var specialCharLi = document.createElement('li');
     specialCharLi.setAttribute('class',"");
     specialCharLi.appendChild(specialCharSpan);
+    specialCharLi.appendChild(document.createTextNode('  Special Character (!@#$%^&*)'));
 
     var eightCharSpan = document.createElement('span');
     eightCharSpan.setAttribute('class', 'eight-character glyphicon glyphicon-stop');
-    eightCharSpan.appendChild(document.createTextNode('  Atleast 8 Character'));
     var eightCharLi = document.createElement('li');
     eightCharLi.setAttribute('class',"");
     eightCharLi.appendChild(eightCharSpan);
+    eightCharLi.appendChild(document.createTextNode('  Atleast 8 Character'));
 
     var ul = document.createElement('ul');
-    ul.setAttribute('class', 'list-unstyled');
+    ul.setAttribute('class', 'list-pwd-strength');
     ul.appendChild(lowerUpperLi);
     ul.appendChild(numberLi);
     ul.appendChild(specialCharLi);
@@ -176,10 +176,9 @@ var applyB2CAddOns = function() {
   function makePwdToggler(pwd){
     // Create show-password checkbox
     var span = document.createElement('span');
-    span.setAttribute('class', 'tt show-pass glyphicon glyphicon-eye-open');
+    span.setAttribute('class', 'show-pass glyphicon glyphicon-eye-open');
     var id = pwd.id + 'toggler';
     span.setAttribute('id', id);
-    span.setAttribute('data-content', 'show password');
     span.setAttribute('title', 'show-hide password');
 
     pwd.addEventListener("keyup", function(){
@@ -257,9 +256,9 @@ var applyB2CAddOns = function() {
   
   setupPwdTogglers();
 
-  $(function () {
-    $('.tt')[0].popover({trigger: "hover"});
-  });
+  // $(function () {
+  //   $('.tt')[0].popover({trigger: "hover"});
+  // });
 };
 
 (function onPageReady() {
@@ -273,7 +272,7 @@ var applyB2CAddOns = function() {
       }());
 </script>
 <style>
-.list-unstyled {
+.list-pwd-strength {
     padding-left: 10px !important;
     list-style: none;
     align-items: start;
