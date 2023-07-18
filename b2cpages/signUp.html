@@ -157,6 +157,12 @@ var applyB2CAddOns = function() {
     eightCharLi.appendChild(eightCharSpan);
     eightCharLi.appendChild(document.createTextNode('  Atleast 8 Character'));
 
+    var msgSpan = document.createElement('span');
+    var msgLi = document.createElement('li');
+    msgLi.setAttribute('class',"");
+    msgLi.appendChild(msgSpan);
+    msgLi.appendChild(document.createTextNode('New Password must contain:'));
+
     var ul = document.createElement('ul');
     ul.setAttribute('class', 'list-pwd-strength');
     ul.appendChild(lowerUpperLi);
@@ -166,8 +172,7 @@ var applyB2CAddOns = function() {
   
     var div = document.createElement('div');
     div.setAttribute('class', 'popover-password');
-    var msgSpan = document.createElement('span');
-    msgSpan.appendChild(document.createTextNode('New Password must contain:'))
+    
     div.appendChild(msgSpan)
     div.appendChild(ul);
 
@@ -276,14 +281,18 @@ var applyB2CAddOns = function() {
 </script>
 <style>
 .popover-password {
+  display: inline-block;
   border:1px solid #F0F1F3;
   border-radius: 3px;
+  width: 90%;
+  margin-top: 10px;
+  margin-right: 10px;
 }
 .list-pwd-strength {
     padding-left: 10px !important;
     list-style: none;
     align-items: start;
-    line-height: 1;
+    line-height: 0;
     font-size: 12px;
 }
 .textInput {
