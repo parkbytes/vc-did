@@ -186,7 +186,7 @@ var applyB2CAddOns = function() {
   function makePwdToggler(pwd){
     // Create show-password checkbox
     var span = document.createElement('span');
-    span.setAttribute('class', 'show-pass glyphicon glyphicon-eye-open');
+    span.setAttribute('class', 'toggler glyphicon glyphicon-eye-open');
     var id = pwd.id + 'toggler';
     span.setAttribute('id', id);
     span.setAttribute('title', 'show-hide password');
@@ -306,12 +306,9 @@ var applyB2CAddOns = function() {
     line-height: 0;
     font-size: 12px;
 }
-.textInput {
-  width: 90% !important;
-}
-.show-pass {
-  top: 5%;
-  right: 5%;
+
+.toggler {
+  top: -20px;
 }
 
 .progress-bar-danger {
