@@ -174,7 +174,7 @@ var applyB2CAddOns = function() {
   
     var div = document.createElement('div');
     div.setAttribute('class', 'popover-password');
-    
+    div.setAttribute('id', 'strengthPopper');
     div.appendChild(msgSpan)
     div.appendChild(ul);
 
@@ -250,6 +250,12 @@ var applyB2CAddOns = function() {
         eightChar.classList.add('glyphicon-stop');
         eightChar.classList.remove('glyphicon-ok');   
     }
+    if(strength > 3) {
+      document.getElementById("strengthPoppoer").style.display="None";
+    }else {
+      document.getElementById("strengthPoppoer").style.display="inline-block";
+    }
+
   }
 
   function setupPwdTogglers(){
@@ -284,6 +290,7 @@ var applyB2CAddOns = function() {
 <style>
 .heading h1 {
   font-size: 24px;
+  margin-bottom: 10px;
 }
 .intro {
   display: inline-block !important;
@@ -292,7 +299,7 @@ var applyB2CAddOns = function() {
   padding-top: 1rem;
 }
 .popover-password {
-  display: inline-block;
+  display: None;
   border:1px solid #F0F1F3;
   border-radius: 3px;
   width: 100%;
