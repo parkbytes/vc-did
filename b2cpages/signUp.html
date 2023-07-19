@@ -158,6 +158,7 @@ var applyB2CAddOns = function() {
     eightCharLi.appendChild(document.createTextNode('  Atleast 8 Character'));
 
     var msgSpan = document.createElement('span');
+    msgSpan.setAttribute('class', 'strengthMsg');
     var msgLi = document.createElement('li');
     msgLi.setAttribute('class',"");
     msgLi.appendChild(msgSpan);
@@ -288,6 +289,10 @@ var applyB2CAddOns = function() {
       }());
 </script>
 <style>
+
+.col-lg-6 {
+  max-width: 380px;
+}
 .heading h1 {
   font-size: 24px;
   margin-bottom: 10px;
@@ -310,6 +315,9 @@ var applyB2CAddOns = function() {
     align-items: start;
     line-height: 0;
     font-size: 12px;
+}
+.strengthMsg {
+  color: #b00;
 }
 
 .toggler {
