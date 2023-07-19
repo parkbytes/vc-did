@@ -157,11 +157,8 @@ var applyB2CAddOns = function() {
     eightCharLi.appendChild(eightCharSpan);
     eightCharLi.appendChild(document.createTextNode('  Atleast 8 Character'));
 
-    var msgSpan = document.createElement('span');
-    msgSpan.setAttribute('class', 'strengthMsg');
     var msgLi = document.createElement('li');
-    msgLi.setAttribute('class',"");
-    msgLi.appendChild(msgSpan);
+    msgLi.setAttribute('class','strengthMsg');
     msgLi.appendChild(document.createTextNode('New Password must contain:'));
 
     var ul = document.createElement('ul');
@@ -176,7 +173,6 @@ var applyB2CAddOns = function() {
     var div = document.createElement('div');
     div.setAttribute('class', 'popover-password');
     div.setAttribute('id', 'strengthPopper');
-    div.appendChild(msgSpan)
     div.appendChild(ul);
 
     var pwd = document.getElementById("newPassword");
@@ -344,7 +340,7 @@ var applyB2CAddOns = function() {
 
 .glyphicon-stop{
   font-size: 10px;
-  color: #F0F1F3;
+  color: #b00;;
 }
 
 .glyphicon-ok {
