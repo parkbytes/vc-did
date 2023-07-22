@@ -196,6 +196,26 @@
 }
   
 </style>
+<script>
+var applyB2CAddOns = function() {
+  var continueBtn = document.querySelector("#next");
+  var divider = document.querySelector(".divider");
+
+  if (continueBtn && divider) {
+          divider.remove();
+          continueBtn.parentElement.parentElement.parentElement.insertAdjacentElement(divider);
+  }
+}
+(function onPageReady() {
+  var intervalHandle = setInterval(
+      function () {
+          if (window.pageReady) {
+              applyB2CAddOns();
+              clearInterval(intervalHandle);
+          }
+      }, 50);
+  }());
+</script>
 
 </head>
 <body>
