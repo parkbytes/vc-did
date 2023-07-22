@@ -203,7 +203,7 @@ var applyB2CAddOns = function() {
 
   if (continueBtn && divider) {
           divider.remove();
-          continueBtn.parentElement.parentElement.parentElement.insertAdjacentElement(divider);
+          continueBtn.parentElement.parentElement.parentElement.insertAdjacentElement('afterend',divider);
   }
 };
 (function onPageReady() {
