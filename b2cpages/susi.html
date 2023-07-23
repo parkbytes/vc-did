@@ -226,12 +226,6 @@ var applyB2CAddOns = function() {
           continueBtn.parentElement.parentElement.parentElement.insertAdjacentElement('afterend',divider);
   }
 
-  function goBack(){
-    if(navigation.canGoBack) {
-        history.back();
-    }
-  }
-
   function addCancelButton() {
     //adds to buttons 
     var cancelBtn = document.createElement('button');
@@ -289,6 +283,12 @@ var applyB2CAddOns = function() {
           }
       }, 50);
   }());
+
+  function goBack(){
+    if(navigation.canGoBack) {
+        history.back();
+    }
+  }
 </script>
 
 </head>
