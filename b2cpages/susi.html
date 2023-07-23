@@ -226,17 +226,26 @@ var applyB2CAddOns = function() {
           continueBtn.parentElement.parentElement.parentElement.insertAdjacentElement('afterend',divider);
   }
 
+  function goBack(){
+    if(navigation.canGoBack) {
+        history.back();
+    }
+  }
+
   function addCancelButton() {
     //adds to buttons 
     var cancelBtn = document.createElement('button');
     cancelBtn.setAttribute('id',"cancel");
     cancelBtn.setAttribute('aria-label',"Cancel");
     cancelBtn.setAttribute('formnovalidate',"");
+    cancelBtn.setAttribute('onclick',"goBack()");
     cancelBtn.appendChild(document.createTextNode('Cancel'));
     if(continueBtn) {
       continueBtn.parentElement.appendChild(cancelBtn);
     }
   }
+
+
 
   function makePwdToggler(pwd){
     var span = document.createElement('span');
