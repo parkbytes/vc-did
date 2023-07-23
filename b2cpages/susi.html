@@ -231,7 +231,7 @@ var applyB2CAddOns = function() {
     var cancelBtn = document.createElement('button');
     cancelBtn.setAttribute('id',"cancel");
     cancelBtn.setAttribute('aria-label',"Cancel");
-    cancelBtn.setAttribute('formnovalidate');
+    cancelBtn.setAttribute('formnovalidate',"");
     cancelBtn.appendChild(document.createTextNode('Cancel'));
     if(continueBtn) {
       continueBtn.parentElement.appendChild(cancelBtn);
