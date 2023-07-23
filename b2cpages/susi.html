@@ -282,11 +282,11 @@ var applyB2CAddOns = function() {
 
 };
 (function onPageReady() {
-  var intervalHandle = setInterval(
+  var timeoutHandle = setTimeout(
       function () {
           if (window.pageReady) {
               applyB2CAddOns();
-              clearInterval(intervalHandle);
+              clearTimeout(timeoutHandle);
           }
       }, 50);
   }());
