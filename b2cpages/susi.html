@@ -208,8 +208,8 @@ var applyB2CAddOns = function() {
           continueBtn.parentElement.parentElement.parentElement.insertAdjacentElement('afterend',divider);
   }
 
-  if ($('input#signInName')){
-    $('input#signInName').focus();
+  if ($('input#readOnlyEmail') && $('input#password')){
+    $('input#password').focus();
   }
 
 };
