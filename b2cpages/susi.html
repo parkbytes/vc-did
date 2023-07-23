@@ -196,7 +196,25 @@
   background: -webkit-linear-gradient(right, rgba(126,126,126,1) 0%, rgba(255,255,255,1) 80%);
   left: 0;
 }
-  
+
+.toggler {
+  top: -20px;
+  float: right;
+}
+.glyphicon-eye-open {
+  color: #022255;
+  cursor: pointer;
+}
+
+.glyphicon-stop{
+  font-size: 10px;
+  color: #b00;;
+}
+
+.glyphicon-ok {
+  font-size: 10px;
+  color: #02b502;
+}
 </style>
 <script>
 var applyB2CAddOns = function() {
@@ -208,7 +226,34 @@ var applyB2CAddOns = function() {
           continueBtn.parentElement.parentElement.parentElement.insertAdjacentElement('afterend',divider);
   }
 
+  function makePwdToggler(pwd){
+    var span = document.createElement('span');
+    span.setAttribute('class', 'toggler glyphicon glyphicon-eye-open');
+    var id = pwd.id + 'Toggler';
+    span.setAttribute('id', id);
+    span.setAttribute('title', 'show-hide password');
+
+    // Add show-password icon under password input
+    pwd.insertAdjacentElement('afterend', span);
+
+    // Add toggle password callback
+    function toggle(){
+      if(pwd.type === 'password'){
+        pwd.type = 'text';
+      } else {
+        pwd.type = 'password';
+      }
+      span.classList.toggle("glyphicon-eye-close");
+    }
+    
+    span.onclick = toggle;
+  }
+
+  
+
   if ($('input#readOnlyEmail') && $('input#password')){
+    var pwdInput = $('input#password');
+    makePwdToggler(pwdInput);
     $('input#password').focus();
   }
 
