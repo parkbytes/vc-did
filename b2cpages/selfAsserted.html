@@ -167,6 +167,7 @@
       var readyToRedirect = false;
       $element.confirm = function() {
           readyToRedirect = true;
+          console.log("element confirm readyToRedirect: " + readyToRedirect);
       };
 
       var failedToRedirect = false;
@@ -179,6 +180,7 @@
               $diags.sendDiagnostics(code, message);
           }
           failedToRedirect = true;
+          console.log("element error failedToRedirect: " + failedToRedirect);
           return false;
       }
 
@@ -194,6 +196,7 @@
           $id.attr({ "role": "alert", "aria-live": "polite", "aria-hidden": "false", "tabindex": "1" }).css("display", "block");
 
           failedToRedirect = true;
+          console.log("element showerror failedToRedirect: " + failedToRedirect);
       }
 
       if(sendCodeBtn) { 
