@@ -247,10 +247,10 @@ var applyB2CAddOns = function() {
     cancelBtn.setAttribute('id',"cancel");
     cancelBtn.setAttribute('aria-label',"Cancel");
     cancelBtn.setAttribute('formnovalidate',"");
-    cancelBtn.setAttribute('onclick',"goBack()");
+    // cancelBtn.setAttribute('onclick',"goBack()");
     cancelBtn.appendChild(document.createTextNode('Cancel'));
     if(continueBtn) {
-      continueBtn.parentElement.parentElement(cancelBtn);
+      continueBtn.parentElement.appendChild(cancelBtn);
     }
   }
 
