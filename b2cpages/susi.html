@@ -252,7 +252,7 @@ var applyB2CAddOns = function() {
   
 
   if ($('input#readOnlyEmail') && $('input#password')){
-    var pwdInput = $('input#password');
+    var pwdInput = document.querySelector('input#password');
     makePwdToggler(pwdInput);
     $('input#password').focus();
   }
