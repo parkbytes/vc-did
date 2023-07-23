@@ -258,7 +258,8 @@ var applyB2CAddOns = function() {
   function setupPwdTogglers(){
     var pwdInputs = document.querySelectorAll('input[type=password]');
     for (var i = 0; i < pwdInputs.length; i++) {
-      makePwdToggler(pwdInputs[i]);
+      if(pwdInputs[i].id != 'renterPassword')
+        makePwdToggler(pwdInputs[i]);
     }
   }
   makePwdPopOver();
