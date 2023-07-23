@@ -207,6 +207,11 @@ var applyB2CAddOns = function() {
           divider.remove();
           continueBtn.parentElement.parentElement.parentElement.insertAdjacentElement('afterend',divider);
   }
+
+  if ($('input#signInName')){
+    $('input#signInName').focus();
+  }
+
 };
 (function onPageReady() {
   var intervalHandle = setInterval(
