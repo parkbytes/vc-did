@@ -241,7 +241,7 @@ var applyB2CAddOns = function() {
     cancelBtn.setAttribute('formnovalidate',"");
     cancelBtn.setAttribute('onclick',"goBack()");
     cancelBtn.appendChild(document.createTextNode('Back'));
-    if(continueBtn) {
+    if(continueBtnn) {
       continueBtn.parentElement.appendChild(cancelBtn);
     }
   }
@@ -282,13 +282,18 @@ var applyB2CAddOns = function() {
 
 };
 (function onPageReady() {
-  var timeoutHandle = setTimeout(
+  let intervalHandle;
+  try {
+  intervalHandle = setInterval(
       function () {
           if (window.pageReady) {
               applyB2CAddOns();
-              clearTimeout(timeoutHandle);
+              clearInterval(intervalHandle);
           }
       }, 50);
+    }catch (error){
+      clearInterval(intervalHandle);
+    }
   }());
 
   function goBack(){
