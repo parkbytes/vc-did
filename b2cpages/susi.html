@@ -281,19 +281,19 @@ var applyB2CAddOns = function() {
   }
 
 };
+
 (function onPageReady() {
-  let intervalHandle;
-  try {
-  intervalHandle = setInterval(
+  var intervalHandle = setInterval(
       function () {
           if (window.pageReady) {
+            try {
               applyB2CAddOns();
               clearInterval(intervalHandle);
+            }catch (error){
+              clearInterval(intervalHandle);
+            }
           }
       }, 50);
-    }catch (error){
-      clearInterval(intervalHandle);
-    }
   }());
 
   function goBack(){
