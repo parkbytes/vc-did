@@ -278,6 +278,9 @@ var applyB2CAddOns = function() {
 
   if ($('input#readOnlyEmail').length && $('input#password').length){
     $( 'input#readOnlyEmail' ).prop( 'disabled', true );
+  }
+
+  if ($('input#password').length){
     var pwdInput = $('input#password')[0];
     makePwdToggler(pwdInput);
     addCancelButton();
