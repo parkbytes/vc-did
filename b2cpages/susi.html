@@ -283,11 +283,8 @@ var applyB2CAddOns = function() {
   if ($('input#password').length){
     var pwdInput = $('input#password')[0];
     makePwdToggler(pwdInput);
-    $('input#password').focus();
-  }
-
-  if(CP && CP.list.length === 1) {
     addCancelButton();
+    $('input#password').focus();
   }
 
 };
