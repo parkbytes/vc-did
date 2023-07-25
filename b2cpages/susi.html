@@ -44,10 +44,10 @@
         #AppleExchange:hover,#AppleManagedExchange:hover {
           background-image: url(https://did.elasticworx.com/b2cpages/src/idp_logos/white/apple.svg);
         }
-        #GoogleExchange {
+        #GoogleExchange, #LinkGoogleExchange1, #LinkGoogleExchange2 {
           background-image: url(https://did.elasticworx.com/b2cpages/src/idp_logos/colored/google.svg);
         }
-        #GoogleExchange:hover {
+        #GoogleExchange:hover,  #LinkGoogleExchange1:hover, #LinkGoogleExchange2:hover {
           background-image: url(https://did.elasticworx.com/b2cpages/src/idp_logos/white/google.svg);
         }
         #LinkedInExchange {
@@ -228,9 +228,13 @@ var applyB2CAddOns = function() {
   var continueBtn = document.querySelector("#next");
   var divider = document.querySelector(".divider");
 
+  if(divider) {
+    $('.divider *').contents().filter(function() { return this.nodeType ===Node.TEXT_NODE; }).remove();
+  }
+
   if (continueBtn && divider) {
-          divider.remove();
-          continueBtn.parentElement.parentElement.parentElement.insertAdjacentElement('afterend',divider);
+      divider.remove();
+      continueBtn.parentElement.parentElement.parentElement.insertAdjacentElement('afterend',divider);      
   }
 
   function addCancelButton() {
@@ -291,6 +295,7 @@ var applyB2CAddOns = function() {
               clearInterval(intervalHandle);
             }catch (error){
               clearInterval(intervalHandle);
+              console.error("B2C custom script error: " + error)
             }
           }
       }, 50);
