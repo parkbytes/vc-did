@@ -3,7 +3,7 @@
 <html>
 <head>
     
-    <title>Enter User details</title>
+    <title>Enter  details</title>
 
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -123,9 +123,19 @@
     </style>
      <style>
 
-      .h1, h1 {
-        font-size: 24px;
-      }
+    .col-lg-6 {
+      max-width: 380px;
+    }
+    .heading h1 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    .intro {
+      display: inline-block !important;
+    }
+    .self_asserted_container .row .panel-default .panel-body .intro p {
+      padding-top: 1rem;
+    }
       .self_asserted_container .row .panel-default .panel-body img.companyLogo {
         height: 40px;
         margin-bottom: 30px;
@@ -140,7 +150,7 @@
       var changeEmailBtn = document.querySelector(".changeClaims");
       var cancelBtn = document.querySelector("#cancel");
       var continueBtn = document.querySelector("#continue");
-
+      
       var sendCodeBtn = document.querySelector(".sendCode");
       var infoMessage = document.querySelector('#emailVerificationSSPRControl_info_message');
       if (!infoMessage) 
@@ -167,7 +177,6 @@
       var readyToRedirect = false;
       $element.confirm = function() {
           readyToRedirect = true;
-          console.log("element confirm readyToRedirect: " + readyToRedirect);
       };
 
       var failedToRedirect = false;
@@ -180,7 +189,6 @@
               $diags.sendDiagnostics(code, message);
           }
           failedToRedirect = true;
-          console.log("element error failedToRedirect: " + failedToRedirect);
           return false;
       }
 
@@ -196,7 +204,6 @@
           $id.attr({ "role": "alert", "aria-live": "polite", "aria-hidden": "false", "tabindex": "1" }).css("display", "block");
 
           failedToRedirect = true;
-          console.log("element showerror failedToRedirect: " + failedToRedirect);
       }
 
       if(sendCodeBtn) { 
@@ -244,14 +251,19 @@
       };
 
       (function onPageReady() {
-      var intervalHandle = setInterval(
-          function () {
-              if (window.pageReady) {
-                  applyB2CAddOns();
-                  clearInterval(intervalHandle);
-              }
-          }, 50);
-      }());
+        var intervalHandle = setInterval(
+            function () {
+                if (window.pageReady) {
+                  try {
+                    applyB2CAddOns();
+                    clearInterval(intervalHandle);
+                  }catch (error){
+                    clearInterval(intervalHandle);
+                    console.error("B2C custom script error: " + error)
+                  }
+                }
+            }, 50);
+        }());
 </script>
 
 </head>
