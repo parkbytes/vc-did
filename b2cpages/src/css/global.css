@@ -1,0 +1,119 @@
+.companyLogo {
+  float: none !important;
+  height: 40px !important;
+}
+.h1, .h2 {
+  font-weight: 400 !important;
+}
+
+#api .intro p {
+  text-align: left;
+  font-size: 1.0em;
+  margin: auto;
+  margin-bottom: 25px;
+}
+.unified_container .row .panel-default #api .localAccount .create p {
+  margin-top: 5rem;
+}
+.unified_container .row .panel-default #api .localAccount .intro h2 {
+  font-size: 14px;
+  margin-top: auto;
+}
+.unified_container .row .panel-default #api .intro {
+  display: inline-block;
+}
+.unified_container .row .panel-default #api .intro h2{
+  font-size: 14px;
+  margin-top: 0px;
+}
+.unified_container .row .panel-default #api .accountButton {
+  font-size: 14px;
+  text-align: left;
+}
+button#next{
+  width: 100% !important;
+  margin-bottom: 10px !important;
+}
+.unified_container .row .panel-default #api .localAccount .entry .entry-item {
+  text-align: left;
+}
+.unified_container .row .panel-default #api .divider {
+  display: inline-block;
+}
+
+.heading h1 {
+  margin-bottom: auto;
+}
+#api[data-name='Unified'] > div.divider:first-child {
+  display: none;
+}
+
+.divider {
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+  text-shadow: 0 1px 0 #fff;
+}
+
+.divider h2 {
+color: #ccc;
+line-height: 20px;
+margin: 20px 0;
+text-align: center;
+text-transform: lowercase;
+}
+
+.divider h2:after,
+.divider h2:before {
+content: "";
+height: 1px;
+position: absolute;
+margin-top: 15px;
+width: 45%;
+}
+
+.divider h2:after {
+background: rgb(126,126,126);
+background: linear-gradient(left, rgba(126,126,126,1) 0%, rgba(255,255,255,1) 80%);
+background: -moz-linear-gradient(left, rgba(126,126,126,1) 0%, rgba(255,255,255,1) 80%);
+background: -ms-linear-gradient(left, rgba(126,126,126,1) 0%, rgba(255,255,255,1) 80%);
+background: -o-linear-gradient(left, rgba(126,126,126,1) 0%, rgba(255,255,255,1) 80%);
+background: -webkit-linear-gradient(left, rgba(126,126,126,1) 0%, rgba(255,255,255,1) 80%);
+right: 0;
+}
+
+.divider h2:before {
+background: rgb(126,126,126);
+background: linear-gradient(right, rgba(126,126,126,1) 0%, rgba(255,255,255,1) 80%);
+background: -moz-linear-gradient(right, rgba(126,126,126,1) 0%, rgba(255,255,255,1) 80%);
+background: -ms-linear-gradient(right, rgba(126,126,126,1) 0%, rgba(255,255,255,1) 80%);
+background: -o-linear-gradient(right, rgba(126,126,126,1) 0%, rgba(255,255,255,1) 80%);
+background: -webkit-linear-gradient(right, rgba(126,126,126,1) 0%, rgba(255,255,255,1) 80%);
+left: 0;
+}
+
+.toggler {
+top: -40px;
+float: right;
+}
+.glyphicon-eye-open {
+color: #022255;
+cursor: pointer;
+}
+
+.glyphicon-stop{
+font-size: 10px;
+color: #b00;;
+}
+
+.glyphicon-ok {
+font-size: 10px;
+color: #02b502;
+}
+.buttons #cancel {
+position: relative;
+right: 70%;
+left: auto;
+background-color: transparent !important;
+color: #505050 !important;
+}
