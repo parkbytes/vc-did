@@ -43,16 +43,7 @@ button#next{
 
 .heading h1 {
   margin-bottom: auto;
-}
-#api[data-name='Unified'] > div.divider:first-child {
-  display: none;
-}
-
-.divider {
-  margin: 0 auto;
-  position: relative;
-  text-align: center;
-  text-shadow: 0 1px 0 #fff;
+  font-size: 22px;
 }
 
 .divider h2 {
