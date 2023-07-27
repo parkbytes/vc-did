@@ -6,6 +6,18 @@
   font-weight: 400 !important;
 }
 
+.heading h1 {
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+.col-lg-6 {
+  max-width: 380px;
+}
+
+.intro {
+  display: inline-block !important;
+}
+
 #api .intro p {
   text-align: left;
   font-size: 1.0em;
@@ -19,9 +31,7 @@
   font-size: 14px;
   margin-top: auto;
 }
-.unified_container .row .panel-default #api .intro {
-  display: inline-block;
-}
+
 .unified_container .row .panel-default #api .intro h2{
   font-size: 14px;
   margin-top: 0px;
@@ -41,10 +51,10 @@ button#next{
   display: inline-block;
 }
 
-.heading h1 {
-  margin-bottom: auto;
-  font-size: 22px;
+.self_asserted_container .row .panel-default .panel-body .intro p {
+  padding-top: 1rem;
 }
+
 
 .divider h2 {
 color: #ccc;
@@ -83,10 +93,15 @@ background: -webkit-linear-gradient(right, rgba(126,126,126,1) 0%, rgba(255,255,
 left: 0;
 }
 
-.toggler {
+#passwordToggler {
 top: -40px;
 float: right;
 }
+.newPasswordToggler {
+  top: -20px;
+  float: right;
+}
+
 .glyphicon-eye-open {
 color: #022255;
 cursor: pointer;
@@ -107,4 +122,21 @@ right: 70%;
 left: auto;
 background-color: transparent !important;
 color: #505050 !important;
+}
+
+.popover-password {
+  display: None;
+  border:1px solid #F0F1F3;
+  border-radius: 3px;
+  width: 100%;
+}
+.list-pwd-strength {
+    padding-left: 10px !important;
+    list-style: none;
+    align-items: start;
+    line-height: 0;
+    font-size: 12px;
+}
+.strengthMsg {
+  color: #b00;
 }
