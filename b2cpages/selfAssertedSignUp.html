@@ -151,7 +151,7 @@
     function cleanUpLabels(labelIds){
       for(labelId in labelIds) {
         console.log(labelId);
-        let label = '#' + labelId;
+        let label = '#' + labelIds[labelId];
         let labelText = $(label).text();
         if(labelText.slice(-1)==="*") {
           $(label).html(labelText.slice(0,-1) + '&nbsp;');
