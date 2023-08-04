@@ -148,7 +148,7 @@
  <script>
   var applyB2CAddOns = function() {
     if ($('#displayName')[0].value != "") {
-      $('#displayName_label')[0].style.display = "inline-block !important";
+      $('#displayName_label').attr('style','display: inline-block !important; font-weight: 400');
     }
   };
   (function onPageReady() {
