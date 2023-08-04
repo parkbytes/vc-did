@@ -160,9 +160,9 @@
     if ($('#displayName')[0].value != "") {
       let labelIds = ['emailAsLabel_label','displayName_label','givenName_label','surname_label']
       cleanUpLabels(labelIds);
-      // $('#displayName_label').attr('style','display: inline-block !important; font-weight: 400');
-      // $('#givenName_label').attr('style','display: inline-block !important; font-weight: 400');
-      // $('#surname_label').attr('style','display: inline-block !important; font-weight: 400');
+      $('#displayName_label').attr('style','display: inline-block !important');
+      $('#givenName_label').attr('style','display: inline-block !important');
+      $('#surname_label').attr('style','display: inline-block !important');
     }
   };
   (function onPageReady() {
