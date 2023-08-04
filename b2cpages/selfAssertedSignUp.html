@@ -147,15 +147,22 @@
  </style>
  <script>
   var applyB2CAddOns = function() {
-    if ($('#displayName')[0].value != "") {
-      // $('#emailAsLabel_label').text($('#emailAsLabel_label').text().slice(0,-1));
-      $('#displayName_label').text($('#displayName_label').text().slice(0,-1));
-      $('#givenName_label').text($('#givenName_label').text().slice(0,-1));
-      $('#surname_label').text($('#surname_label').text().slice(0,-1));
 
-      $('#displayName_label').attr('style','display: inline-block !important; font-weight: 400');
-      $('#givenName_label').attr('style','display: inline-block !important; font-weight: 400');
-      $('#surname_label').attr('style','display: inline-block !important; font-weight: 400');
+    function cleanUpLabels(labelIds){
+      for(labelId in labelIds) {
+        let label = '#' + label;
+        let labelText = $(label).text();
+        if(labelText.slice(-1)==="*") {
+          $('#displayName_label').html(labelText.slice(0,-1) + '&nbsp;');
+        }
+      }
+    }
+    if ($('#displayName')[0].value != "") {
+      let labelIds = ['emailAsLabel_label','displayName_label','givenName_label','surname_label']
+      cleanUpLabels(labelIds);
+      // $('#displayName_label').attr('style','display: inline-block !important; font-weight: 400');
+      // $('#givenName_label').attr('style','display: inline-block !important; font-weight: 400');
+      // $('#surname_label').attr('style','display: inline-block !important; font-weight: 400');
     }
   };
   (function onPageReady() {
