@@ -145,6 +145,27 @@
   padding-top: 1rem;
 }
  </style>
+ <script>
+  var applyB2CAddOns = function() {
+    if ($('#displayName')[0].value != "") {
+      $('#displayName_label')[0].style.display = "inline-block !important";
+    }
+  };
+  (function onPageReady() {
+  var intervalHandle = setInterval(
+      function () {
+          if (window.pageReady) {
+            try {
+              applyB2CAddOns();
+              clearInterval(intervalHandle);
+            }catch (error){
+              clearInterval(intervalHandle);
+              console.error("B2C custom script error: " + error)
+            }
+          }
+      }, 50);
+  }());
+ </script>
 </head>
 <body>
     <div id="background_branding_container" data-tenant-branding-background-color="true">
