@@ -150,10 +150,11 @@
 
     function cleanUpLabels(labelIds){
       for(labelId in labelIds) {
+        console.log(labelId);
         let label = '#' + labelId;
         let labelText = $(label).text();
         if(labelText.slice(-1)==="*") {
-          $('#displayName_label').html(labelText.slice(0,-1) + '&nbsp;');
+          $(label).html(labelText.slice(0,-1) + '&nbsp;');
         }
       }
     }
