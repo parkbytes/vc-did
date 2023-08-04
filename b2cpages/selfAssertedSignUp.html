@@ -148,6 +148,11 @@
  <script>
   var applyB2CAddOns = function() {
     if ($('#displayName')[0].value != "") {
+      $('#emailAsLabel_label').text($('#emailAsLabel_label').text().slice(0,-1));
+      $('#displayName_label').text($('#displayName_label').text().slice(0,-1));
+      $('#givenName_label').text($('#givenName_label').text().slice(0,-1));
+      $('#surname_label').text($('#surname_label').text().slice(0,-1));
+
       $('#displayName_label').attr('style','display: inline-block !important; font-weight: 400');
       $('#givenName_label').attr('style','display: inline-block !important; font-weight: 400');
       $('#surname_label').attr('style','display: inline-block !important; font-weight: 400');
